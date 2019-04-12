@@ -1,6 +1,6 @@
 /**
  * @license jquery.panzoom.js v3.2.2
- * Updated: Wed Jun 21 2017
+ * Updated: Fri Apr 12 2019
  * Add pan and zoom functionality to any element
  * Copyright (c) timmy willison
  * Released under the MIT license
@@ -38,7 +38,6 @@
 	})();
 
 	// Regex
-	var rupper = /([A-Z])/g;
 	var rsvg = /^http:[\w\.\/]+svg$/;
 
 	var floating = '(\\-?\\d[\\d\\.e-]*)';
@@ -243,9 +242,8 @@
 		// Set the starting transform
 		this._buildTransform();
 
-		// Build the appropriately-prefixed transform style property name
-		// De-camelcase
-		this._transform = $.cssProps.transform.replace(rupper, '-$1').toLowerCase();
+		// Transform style property name
+		this._transform = 'transform';
 
 		// Build the transition value
 		this._buildTransition();

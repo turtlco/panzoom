@@ -38,7 +38,6 @@
 	})();
 
 	// Regex
-	var rupper = /([A-Z])/g;
 	var rsvg = /^http:[\w\.\/]+svg$/;
 
 	var floating = '(\\-?\\d[\\d\\.e-]*)';
@@ -243,9 +242,8 @@
 		// Set the starting transform
 		this._buildTransform();
 
-		// Build the appropriately-prefixed transform style property name
-		// De-camelcase
-		this._transform = $.cssProps.transform.replace(rupper, '-$1').toLowerCase();
+		// Transform style property name
+		this._transform = 'transform';
 
 		// Build the transition value
 		this._buildTransition();
